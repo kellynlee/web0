@@ -1,0 +1,20 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	background-attachment: fixed;
+}
+/*mainFrame*/
+#try{
+	width: 1000px;
+	height: 1000px;
+	margin: 0 auto;
+}
+#mainFrame{
+	margin-left: 2%;
+	border: none;
+	width:96%;
+	overflow: hidden;
+	/*border: 1px #000 solid;*/
+}
+/*mainFrame*/
+
