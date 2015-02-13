@@ -6,14 +6,27 @@ body{
 	margin: 0px;
 	padding: 0px;
 	position: relative;
+	font-family: Arial Black;
 }
+
+a:focus, a:active,
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="image"]::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+border: 0;
+outline : 0;
+}    /*//去除火狐的focus下的虚线边框。*/
 
 /*topbar*/
 #topBar{
 	overflow: hidden;
 	margin: 0 auto;
 	width:100%;
-	height:100px;
+	height:40px;
 	background-color: #ccc;
 	display: inline-block;
 	
@@ -28,18 +41,28 @@ body{
 	background-attachment: fixed;
 	overflow: hidden;
     position: relative;
-    left:40%;
+    left:50%;
+    top:10%;
     width: 30%;
-    height:40%;
+    height:70%;
     background-color: #ccc;
     display: inline-block;
 }
 #sIcon{
-	width: 10%;
+	width: 8%;
     position: relative;
-
+    opacity: .7;
+}
+#sIcon:hover{
+	opacity: 1;
+}
+/*消除点击产生的虚线*/
+#sIcon:focus{
+    outline :none;
+    border: none;
 }
 .searchArea{
+	opacity: .7;
 	border: 1px solid #fff;
 	position: relative;
 	bottom: 12%;
@@ -49,19 +72,34 @@ body{
 	overflow-y:hidden; 
 	width:84%;
 	height:70%;
-	font-size: 150%;
-}
+	font-size: 100%;
 
+}
+.searchArea:hover{
+	opacity: 1;
+}
+.searchArea:focus{
+	border: 1px solid yellow;
+	opacity: 1;
+}
 #logIn{
+	height:100%;
 	position: relative;
 	bottom: 20%;
-	left:50%;
+	left:52%;
 	outline: none;
-	border: none;
+	border: 1px solid #ccc;
 	background-color: #ccc;
 	color: white;
 	font-weight: bold;
 	font-size: 100%;
+}
+#logIn:hover{
+	background-color: #666666;
+	border: 1px solid #666666;
+}
+#logIn:focus{
+	content: "mmd";
 }
 /*topbar*/
 
@@ -113,8 +151,14 @@ body{
     background-color: #666666;
     color: #fff;
     font-size: 150%;
+    font-weight: bold;
 }
 .title:hover{
     opacity: .7;
 }
 /*mainBar*/
+
+
+/*弹出层*/
+
+/*弹出层*/
