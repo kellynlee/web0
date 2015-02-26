@@ -1,37 +1,152 @@
-<doctype html>
-<html>
-	<head>
-		<title>Syslab</title>
-		<meta  http-equiv="Content-Type"content ="text/html" charest = "utf-8" >
-		<link rel = "stylesheet" href = "style.css">
-	</head>
-	<body>
-		<div class = "ttop">
-    <a  class = "top_link" href = "#">��Ա��½</a>
-    <a class = "top_link" href = "#">���ע��</a>  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Syslab</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(function () {
+	
+	imgZoomInit()
+})
+
+function imgZoomInit(){
+	$('.piclist li.pic').append(function(){
+		ht = $(this).find('.in').html();
+		return "<div class='original'>"+ht+"</div>";
+	});
+	
+	$(".piclist li.pic .in img").each(function(i){
+		var img = $(this);
+		var realWidth ;
+		var realHeight ;
+		var vs ;
+		
+		realWidth = this.width;
+		realHeight = this.height;
+		vs = realWidth/realHeight;
+		
+		if(vs>=1.62){
+			$(img).css("width","auto").css("height","142px").css("marginLeft",115-(71*realWidth/realHeight)+"px");
+		}
+		else{
+			$(img).css("width","230px").css("height","auto").css("marginTop",71-(115*realHeight/realWidth)+"px");
+		}
+		
+		if(vs>=1){
+			$(img).parent().parent().parent().find('.original img').height(260);
+			$(img).parent().parent().parent().find('.original img').width('auto');
+			$(img).parent().parent().parent().find('.original').css({
+			
+				marginLeft: function(){
+					return -(130*realWidth/realHeight)-6;
+				},
+				left:'50%'
+			})
+		}else{
+			$(img).parent().parent().parent().find('.original img').width(260);
+			$(img).parent().parent().parent().find('.original img').height('auto');
+			$(img).parent().parent().parent().find('.original').css({
+				
+				marginTop: function(){
+					return -(130*realHeight/realWidth)-36;
+				},
+				top:'50%'
+			});
+			$(img).parent().parent().parent().find('.original b').css('display','block')
+		}		
+	});
+
+	
+	$('.piclist li.pic').hover(function(){
+			$(this).addClass('on');
+		},function(){
+			$(this).removeClass('on');	
+	})
+	
+	$(".piclist ul li:nth-child(4n)").addClass('r');
+}
+
+
+</script>
+</head>
+
+<body>
+	<div class = "ttop">
+    <a  class = "top_link" href = "#">会员登陆</a>
+    <a class = "top_link" href = "#">免费注册</a>  
     </div>
     <div class = "top">                
           <div class = "txt">
-                       �̳�</div>
+                       商城</div>
                              </div>
-           <div class = shop>
-           	<table cellpadding = "40" cellspacing = "20" width = "1167">
-            <tr>
-            	<td><a href ="#"><img src = "image/10.png"></a></td>
-            	<td><a href ="#"><img src = "image/10.png"></a></td>
-            	<td><a href ="#"><img src = "image/10.png"></a></td>
-            </tr>
-            <tr>
-              <td><a href ="#"><img src = "image/10.png"></a></td>
-              <td><a href ="#"><img src = "image/10.png"></a></td>
-              <td><a href ="#"><img src = "image/10.png"></a></td>
-            </tr>
-            <tr>
-              <td><a href ="#"><img src = "image/10.png"></a></td>
-              <td><a href ="#"><img src = "image/10.png"></a></td>
-              <td><a href ="#"><img src = "image/10.png"></a></td>
-            </tr>
-            </table>
-           </div>
-	</body>
+<div class="picbox">
+    <div class="picshow picshow01">
+        <div class="piclist">
+    
+            <ul>
+                <li class="pic" id="tes">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/10.png" /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/10.png"  /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/10.png"  /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/10.png"  /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/10.png" /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/10.png"/></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/10.png"/></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/10.png" /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+        </ul>
+        </div>
+    
+    </div>
+       
+</div>
+
+</body>
 </html>
