@@ -28,7 +28,7 @@ function Pop(){
 	var body=window.top.document.getElementsByTagName('body')[0];
 	var oDiv = window.top.document.createElement('div');
 	oDiv.id='oDiv';
-	oDiv.innerHTML='<input type="button" onclick="Popout();" value="cancel" id="sBtn"></input>';
+	oDiv.innerHTML='<input type="image" src="images/cancel.png" onclick="Popout();"  id="sBtn"></input>';
 	oDiv.className="pop";
 	body.insertBefore(oDiv,body.firstChild);
 	var sHeight=body.scrollHeight;
@@ -47,26 +47,22 @@ function Popout(){
 function tooltip(){
 
 	var body=window.top.document.getElementsByTagName('body')[0];
-	if(body.firstChild.id!='ooDiv'){
-    var oDiv =window.top.document.createElement('div');
-    oDiv.id='ooDiv';
-    oDiv.className='tooltip';
-    body.insertBefore(oDiv, body.firstChild); 
-    }
+	var oDiv = window.top.document.createElement('div');
+	oDiv.id='oDiv';
+	oDiv.innerHTML='<input type="image" src="images/cancel.png" onclick="Popout();" id="sBtn" ></input><p id="title">登录</p><input type="textarea" id="accountname" placeholder="用户名/手机号"></input><input type="textarea" id="password" placeholder="密码"></input><input type="button" value="登 录" class="submit"></input><input type="checkbox" id="checkbox"></input><p id="readonly">下次自动登录</p>';
+	oDiv.className="tooltip";
+	body.insertBefore(oDiv,body.firstChild);
+	var sHeight=body.scrollHeight;
+	var sWidth = body.scrollWidth;
+	var oMask = window.top.document.createElement('div');
+	oMask.id='mask';
+	oMask.className="mask";
+	body.insertBefore(oMask,body.firstChild);
 }
 function rmtooltip(){
-	alert("gosh");
 	var body=window.top.document.getElementsByTagName('body')[0];
-	var x =event.clientX;
-	var y = event.clientY;
-	var oDiv= body.firstChild;
-	var divx1 = oDiv.offsetLeft; 
-    var divy1 = oDiv.offsetTop; 
-    var divx2 = oDiv.offsetLeft + div.offsetWidth; 
-    var divy2 = oDiv.offsetTop + div.offsetHeight; 
-    if( x < divx1 || x > divx2 || y < divy1 || y > divy2){  
-    	alert("mmd");
 	body.removeChild(body.firstChild);
-    }
+	body.removeChild(body.firstChild);
+
     
 }
