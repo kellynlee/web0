@@ -14,7 +14,7 @@ switch($action) {
 		$todoObj->searchresume($_POST['data']);
 		break;
 	case 'searchshop':
-		$todoObj->searchresume($_POST['data']);
+		$todoObj->searchshop($_POST['data']);
 		break;
 	default:
 		echo '{"status":-1,"message":"Action not specified."}';
