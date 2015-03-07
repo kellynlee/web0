@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Syslab</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(function () {
+	
+	imgZoomInit()
+})
+
+function imgZoomInit(){
+	$('.piclist li.pic').append(function(){
+		ht = $(this).find('.in').html();
+		return "<div class='original'>"+ht+"</div>";
+	});
+	
+	$(".piclist li.pic .in img").each(function(i){
+		var img = $(this);
+		var realWidth ;
+		var realHeight ;
+		var vs ;
+		
+		realWidth = this.width;
+		realHeight = this.height;
+		vs = realWidth/realHeight;
+		
+		if(vs>=1.62){
+			$(img).css("width","auto").css("height","142px").css("marginLeft",115-(71*realWidth/realHeight)+"px");
+		}
+		else{
+			$(img).css("width","230px").css("height","auto").css("marginTop",71-(115*realHeight/realWidth)+"px");
+		}
+		
+		if(vs>=1){
+			$(img).parent().parent().parent().find('.original img').height(260);
+			$(img).parent().parent().parent().find('.original img').width('auto');
+			$(img).parent().parent().parent().find('.original').css({
+			
+				marginLeft: function(){
+					return -(130*realWidth/realHeight)-6;
+				},
+				left:'50%'
+			})
+		}else{
+			$(img).parent().parent().parent().find('.original img').width(260);
+			$(img).parent().parent().parent().find('.original img').height('auto');
+			$(img).parent().parent().parent().find('.original').css({
+				
+				marginTop: function(){
+					return -(130*realHeight/realWidth)-36;
+				},
+				top:'50%'
+			});
+			$(img).parent().parent().parent().find('.original b').css('display','block')
+		}		
+	});
+
+	
+	$('.piclist li.pic').hover(function(){
+			$(this).addClass('on');
+		},function(){
+			$(this).removeClass('on');	
+	})
+	
+	$(".piclist ul li:nth-child(4n)").addClass('r');
+}
+
+
+</script>
+</head>
+
+<body>
+	<div class = "under_ttop"><div class = "ttop">
+    <a  class = "top_link" href = "#">会员登陆</a>
+    <a class = "top_link" href = "#">免费注册</a>  
+    </div></div>
+    <div class = "top">                
+          <div class = "logo">
+              <img src = "image/1.jpg" class = "logo">
+          </div>
+          <div class = "txt">
+                       美食</div>
+                             </div>
+<div class = "type">
+   <a  class = "a_type"href ="#">四川美食</a>
+   <a class = "a_type"href ="#">北京美食</a>
+   <a class = "a_type"href ="#">广东美食</a>
+   <a class = "a_type"href ="#">环球美食</a>
+</div>
+<div class="picbox">
+    <div class="picshow picshow01">
+        <div class="piclist">
+    
+            <ul>
+                <li class="pic" id="tes">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/sc/s1.jpg" /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/sc/s2.jpg"  /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/sc/s3.jpg"  /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/sc/s4.jpg"  /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                 <li class="pic" id="tes">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/sc/s5.jpg" /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/sc/s6.jpg"  /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/sc/s7.jpg"  /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/sc/s8.jpg"  /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                 <li class="pic" id="tes">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/sc/s9.jpg" /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/sc/s10.jpg"  /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/sc/s11.jpg"  /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/sc/s12.jpg"  /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                 <li class="pic" id="tes">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/sc/s13.jpg" /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/sc/s14.jpg"  /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/sc/s15.jpg"  /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+                <li class="pic">
+                <div class="in">
+                    <div class="imgdiv"><img src="image/sc/s16.jpg"  /></div>
+                    <span><b>商店描述</b>商店描述</span>
+                </div>
+    
+                </li>
+        </ul>
+        </div>
+    
+    </div>
+       
+</div>
+
+</body>
+</html>
